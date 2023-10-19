@@ -4,7 +4,7 @@
  * @param {*} green
  * @param {*} blue
  */
-function rgbToHex(red, green, blue) {
+function useRgbToHex(red, green, blue) {
   '#' + ((1 << 24) + (red << 16) + (green << 8) + blue).toString(16).slice(1)
 }
 
@@ -12,7 +12,7 @@ function rgbToHex(red, green, blue) {
  * @description 复制到剪切板
  * @param {*} text
  */
-function copyToClipboard(text) {
+function useClipboard(text) {
   return navigator.clipboard.writeText(text)
 }
 
@@ -20,7 +20,7 @@ function copyToClipboard(text) {
  * @description 计算两个日期之间相差的天数
  * @param {*} params
  */
-function DayDif(date1, date2) {
+function useDayDif(date1, date2) {
   return Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)
 }
 
@@ -28,7 +28,7 @@ function DayDif(date1, date2) {
  * @description 生成随机16进制
  * @returns #92b008
  */
-function randomHex() {
+function useRandomHex() {
   return `#${Math.floor(Math.random() * 0xffffff)
     .toString(16)
     .padEnd(6, '0')}`
@@ -39,7 +39,7 @@ function randomHex() {
  * @param { string } params
  * @returns
  */
-function getParameters(URL) {
+function useUrlParameters(URL) {
   URL = JSON.parse(
     '{"' +
       decodeURI(URL.split('?')[1])
@@ -55,7 +55,7 @@ function getParameters(URL) {
  * @description 获取用户选定的文本
  * @returns
  */
-function getSelectedText() {
+function useSelectedText() {
   return window.getSelection().toString()
 }
 
@@ -63,7 +63,7 @@ function getSelectedText() {
  * @description 获取设备类型
  * @returns
  */
-function getDeviceType() {
+function useDeviceType() {
   let u = navigator.userAgent
   let browser = {
     versions: {
